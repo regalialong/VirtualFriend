@@ -81,7 +81,8 @@ void DumpButtonObjects()
 
     foreach (var buttonObject in actionsList)
     {
-        log.Information("{action}: {GameObjectName} ({GameObjectPathID})", buttonObject.Key, buttonObject.Value.Item1,
+        log.Information("{action}: '{GameObjectName}' ({GameObjectPathID})", buttonObject.Key,
+            buttonObject.Value.Item1,
             buttonObject.Value.Item2);
     }
 }

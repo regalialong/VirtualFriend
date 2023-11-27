@@ -65,7 +65,8 @@ void DumpButtonObjects()
     {
         var baseField = manager.GetBaseField(worldAssetInstance, monoInfo);
 
-        if (baseField["m_Script.m_PathID"].AsInt != PathID) continue;
+        // ReSharper disable once CompareOfFloatsByEqualityOperator - float imprecision should equal out
+        if (baseField["m_Script.m_PathID"].AsFloat != PathID) continue;
         if (baseField["m_OnClick.m_PersistentCalls.m_Calls.Array"].Children.Count == 0) continue;
 
         // This tree is pretty ugly but in essence, actionable buttons have an OnClick that does a SendCustomEvent
